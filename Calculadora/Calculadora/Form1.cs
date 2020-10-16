@@ -19,7 +19,18 @@ namespace Calculadora
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            lbResultado.Text = (int.Parse(txtNumero1.Text) + int.Parse(txtNumero2.Text)).ToString();
+            if (txtNumero1.TextLength != 0 & txtNumero2.TextLength != 0)
+            {
+                lbResultado.Text = (int.Parse(txtNumero1.Text) + int.Parse(txtNumero2.Text)).ToString();
+                txtNumero1.Text = "";
+                txtNumero2.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Se encontro un error");
+                txtNumero1.Text = "";
+
+            }
         }
     }
 }
